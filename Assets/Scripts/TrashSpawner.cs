@@ -46,7 +46,6 @@ public class TrashSpawner : MonoBehaviour
         {
             int randomizerValue = Randomizer();
             Instantiate(trashPrefabs[Random.Range(0, trashPrefabs.Length)], new Vector3(Random.Range(mainCam.transform.position.x, randomizerValue), yOrigin.transform.position.y, Random.Range(mainCam.transform.position.z, randomizerValue)), Quaternion.identity);
-            Debug.Log(randomizerValue);
             yield return new WaitForSeconds(timeBetweenEachSpawn);
 
         }

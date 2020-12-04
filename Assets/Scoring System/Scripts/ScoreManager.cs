@@ -41,5 +41,8 @@ public class ScoreManager : MonoBehaviour
     {
         numberOfCollectedTrashItems++;
         numberOfCollectedTrashGrams += trashItemWeight;
+        Debug.Log(numberOfCollectedTrashItems);
+        Debug.Log(numberOfCollectedTrashGrams);
+
     }
 }
