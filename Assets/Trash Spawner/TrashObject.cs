@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TrashObject : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] float itemWeight;
     void Start()
     {
 
@@ -17,6 +17,7 @@ public class TrashObject : MonoBehaviour
     }
     void OnMouseDown()
     {
+        ScoreManager.Instance.AddToScore(itemWeight);
         Destroy(gameObject);
     }
 }
