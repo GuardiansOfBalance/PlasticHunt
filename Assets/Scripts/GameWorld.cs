@@ -12,6 +12,7 @@ public class GameWorld : MonoBehaviour
     void OnEnable()
     {
         FindObjectOfType<PlaceOnPlane>().enabled = false;
+        MenuManager.Instance.tapToPlaceAR.SetActive(false);
     }
     // Update is called once per frame
     void Update()
