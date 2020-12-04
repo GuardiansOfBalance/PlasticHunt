@@ -13,6 +13,8 @@ public class MenuManager : MonoBehaviour
 
     [SerializeField] GameObject comingSoonImg;
     [SerializeField] GameObject alternativesImg;
+    [SerializeField] AudioSource btnClkAS;
+
     public GameObject tapToPlaceAR;
 
     bool gameIsPaused;
@@ -90,23 +92,27 @@ public class MenuManager : MonoBehaviour
         gameStarted = true;
         gameIsPaused = false;
         tapToPlaceAR.SetActive(true);
+        btnClkAS.Play();
     }
 
     void DonateBtnClk()
     {
         comingSoonImg.SetActive(true);
         currentPopup = comingSoonImg;
+        btnClkAS.Play();
     }
 
     void ReportIncidentBtnClk()
     {
         comingSoonImg.SetActive(true);
         currentPopup = comingSoonImg;
+        btnClkAS.Play();
     }
 
     void AlternativeSolutionsBtnClk()
     {
         alternativesImg.SetActive(true);
         currentPopup = alternativesImg;
+        btnClkAS.Play();
     }
 }
