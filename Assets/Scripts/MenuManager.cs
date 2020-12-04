@@ -17,8 +17,7 @@ public class MenuManager : MonoBehaviour
 
     public GameObject tapToPlaceAR;
 
-    bool gameIsPaused;
-    bool gameStarted;
+   
     GameObject currentPopup;
     #region Singleton
     private static MenuManager _instance;
@@ -41,8 +40,8 @@ public class MenuManager : MonoBehaviour
 
     void Start()
     {
-        gameIsPaused = true;
-        gameStarted = false;
+        GameManager.Instance.gameIsPaused = true;
+        GameManager.Instance.gameStarted = false;
 
         playBtn.onClick.AddListener(StartGame);
         donateBtn.onClick.AddListener(DonateBtnClk);
@@ -54,16 +53,16 @@ public class MenuManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && gameIsPaused && gameStarted && currentPopup == null)
+        if (Input.GetKeyDown(KeyCode.Escape) && GameManager.Instance.gameIsPaused && GameManager.Instance.gameStarted && currentPopup == null)
         {
             ResumeGame();
         }
-        else if (Input.GetKeyDown(KeyCode.Escape) && !gameIsPaused)
+        else if (Input.GetKeyDown(KeyCode.Escape) && !GameManager.Instance.gameIsPaused)
         {
             PauseGame();
         }
 
-        else if (Input.GetKeyDown(KeyCode.Escape) && gameIsPaused && currentPopup != null)
+        else if (Input.GetKeyDown(KeyCode.Escape) && GameManager.Instance.gameIsPaused && currentPopup != null)
         {
             currentPopup.gameObject.SetActive(false);
             currentPopup = null;
@@ -75,22 +74,22 @@ public class MenuManager : MonoBehaviour
     {
         Time.timeScale = 0;
         menuUI.SetActive(true);
-        gameIsPaused = true;
+        GameManager.Instance.gameIsPaused = true;
     }
 
     void ResumeGame()
     {
         Time.timeScale = 1;
         menuUI.SetActive(false);
-        gameIsPaused = false;
+        GameManager.Instance.gameIsPaused = false;
     }
 
     void StartGame()
     {
         Time.timeScale = 1;
         menuUI.SetActive(false);
-        gameStarted = true;
-        gameIsPaused = false;
+        GameManager.Instance.gameStarted = true;
+        GameManager.Instance.gameIsPaused = false;
         tapToPlaceAR.SetActive(true);
         btnClkAS.Play();
     }
