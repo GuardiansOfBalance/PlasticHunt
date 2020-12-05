@@ -37,6 +37,8 @@ public class GameManager : MonoBehaviour
 
     public void EndGame()
     {
-
+        TrashSpawner.Instance.canSpawn = false;
+        Time.timeScale = 0;
+        Debug.Log("Game Ended " + ScoreManager.Instance.numberOfCollectedTrashGrams + ScoreManager.Instance.numberOfCollectedTrashItems);
     }
 }

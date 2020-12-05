@@ -10,10 +10,12 @@ public class MenuManager : MonoBehaviour
     [SerializeField] Button donateBtn;
     [SerializeField] Button reportIncidentBtn;
     [SerializeField] Button alternativeSolutionsBtn;
+    [SerializeField] Button storeBtn;
 
     [SerializeField] GameObject comingSoonImg;
     [SerializeField] GameObject alternativesImg;
     [SerializeField] AudioSource btnClkAS;
+    [SerializeField] GameObject storeImg;
 
     public GameObject tapToPlaceAR;
 
@@ -47,7 +49,7 @@ public class MenuManager : MonoBehaviour
         donateBtn.onClick.AddListener(DonateBtnClk);
         reportIncidentBtn.onClick.AddListener(ReportIncidentBtnClk);
         alternativeSolutionsBtn.onClick.AddListener(AlternativeSolutionsBtnClk);
-
+        storeBtn.onClick.AddListener(storeBtnClk);
         Time.timeScale = 0;
     }
 
@@ -113,5 +115,12 @@ public class MenuManager : MonoBehaviour
         alternativesImg.SetActive(true);
         currentPopup = alternativesImg;
         btnClkAS.Play();
+    }
+
+    void storeBtnClk()
+    {
+        storeImg.SetActive(true);
+        btnClkAS.Play();
+        currentPopup = storeImg;
     }
 }

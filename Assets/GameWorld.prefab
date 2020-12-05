@@ -659,7 +659,7 @@ MonoBehaviour:
   - {fileID: 5021433209824520438, guid: d66e43f7c3a899c43a1895e4b23f1a70, type: 3}
   yOrigin: {fileID: 6403241288156371170}
   canSpawn: 0
-  timeBetweenEachSpawn: 0.5
+  timeBetweenEachSpawn: 0.25
   offsetFromCamRange: 3
 --- !u!1 &1727398514723832738
 GameObject:

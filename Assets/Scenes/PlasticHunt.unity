@@ -870,10 +870,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ScoreManager
       objectReference: {fileID: 0}
-    - target: {fileID: 3854575919311615911, guid: 995d09eb7878db740823e12b0977f9a6, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 995d09eb7878db740823e12b0977f9a6, type: 3}
 --- !u!1001 &4102499574563824379
@@ -931,9 +927,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
-    - target: {fileID: 4102499576291453553, guid: f744273d84852604e8fb58d4b911d4d9, type: 3}
-      propertyPath: m_IsActive
-      value: 1
+    - target: {fileID: 4102499576291453559, guid: f744273d84852604e8fb58d4b911d4d9, type: 3}
+      propertyPath: gameStarted
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4102499576291453559, guid: f744273d84852604e8fb58d4b911d4d9, type: 3}
+      propertyPath: gameTotalTime
+      value: 120
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f744273d84852604e8fb58d4b911d4d9, type: 3}
@@ -1031,10 +1031,6 @@ PrefabInstance:
     - target: {fileID: 1107343103887874171, guid: 60142c04bcb0f574faa6d72114f1d3aa, type: 3}
       propertyPath: m_Name
       value: Menu
-      objectReference: {fileID: 0}
-    - target: {fileID: 1107343103887874171, guid: 60142c04bcb0f574faa6d72114f1d3aa, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60142c04bcb0f574faa6d72114f1d3aa, type: 3}

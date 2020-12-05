@@ -12,7 +12,7 @@ public class GameTimer : MonoBehaviour
     #endregion
     [SerializeField] Image gameTimerFillImg;
     [SerializeField] Text timerTxt;
-
+    bool callGameEnd;
     float currentTime;
 
     void Awake()
@@ -39,13 +39,22 @@ public class GameTimer : MonoBehaviour
         if (gameTimerFillImg.fillAmount > 0 && GameManager.Instance.gameStarted)
         {
             currentTime -= Time.deltaTime;
+            if (currentTime <= GameManager.Instance.gameTotalTime / 2 && currentTime > GameManager.Instance.gameTotalTime / 4)
+            {
+                TrashSpawner.Instance.currentDragValue = 4;
+            }
+            else if (currentTime <= GameManager.Instance.gameTotalTime / 2 && currentTime <= GameManager.Instance.gameTotalTime / 4)
+            {
+                TrashSpawner.Instance.currentDragValue = 2;
+            }
             gameTimerFillImg.fillAmount -= 1.0f / GameManager.Instance.gameTotalTime * Time.deltaTime;
-            int seconds = (int)currentTime % 60;
+            int seconds = (int)currentTime % (int)GameManager.Instance.gameTotalTime;
             timerTxt.text = seconds.ToString();
         }
-        else if (gameTimerFillImg.fillAmount <= 0)
+        else if (gameTimerFillImg.fillAmount <= 0 && !callGameEnd)
         {
-            Debug.Log("Game Ended");
+            GameManager.Instance.EndGame();
+            callGameEnd = true;
         }
     }
 }
