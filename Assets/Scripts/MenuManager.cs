@@ -76,13 +76,18 @@ public class MenuManager : MonoBehaviour
     {
         Time.timeScale = 0;
         menuUI.SetActive(true);
+        if (GameManager.Instance.arPlaced)
+            GameWorld.Instance.HideGameUI();
         GameManager.Instance.gameIsPaused = true;
     }
 
     void ResumeGame()
     {
         Time.timeScale = 1;
+        tapToPlaceAR.SetActive(false);
         menuUI.SetActive(false);
+        if (GameManager.Instance.arPlaced)
+            GameWorld.Instance.ShowGameUI();
         GameManager.Instance.gameIsPaused = false;
     }
 
@@ -92,8 +97,11 @@ public class MenuManager : MonoBehaviour
         menuUI.SetActive(false);
         GameManager.Instance.gameStarted = true;
         GameManager.Instance.gameIsPaused = false;
-        tapToPlaceAR.SetActive(true);
-        btnClkAS.Play();
+        if (!GameManager.Instance.arPlaced)
+            tapToPlaceAR.SetActive(true);
+        else
+            GameWorld.Instance.ShowGameUI();
+            btnClkAS.Play();
     }
 
     void DonateBtnClk()

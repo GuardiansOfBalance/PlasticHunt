@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     public bool gameStarted;
     public float gameTotalTime;
     public bool gameEnded;
+    public bool arPlaced;
+
     void Awake()
     {
         #region Singleton

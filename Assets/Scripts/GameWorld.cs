@@ -27,6 +27,7 @@ public class GameWorld : MonoBehaviour
     void Start()
     {
         MenuManager.Instance.tapToPlaceAR.SetActive(false);
+        GameManager.Instance.arPlaced = true;
         transform.SetAsLastSibling();
     }
     void OnEnable()
@@ -36,7 +37,6 @@ public class GameWorld : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
     }
 
     public void ShowGameUI()

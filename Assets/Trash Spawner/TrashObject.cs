@@ -23,9 +23,12 @@ public class TrashObject : MonoBehaviour
 
     void OnMouseDown()
     {
-        ScoreManager.Instance.AddToScore(itemWeight);
-        collected = true;
-        StartCoroutine(MoveToCamera());
+        if (Time.timeScale != 0)
+        {
+            ScoreManager.Instance.AddToScore(itemWeight);
+            collected = true;
+            StartCoroutine(MoveToCamera());
+        }
     }
 
     IEnumerator MoveToCamera()
