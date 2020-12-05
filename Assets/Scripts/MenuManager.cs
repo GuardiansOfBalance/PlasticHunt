@@ -19,7 +19,7 @@ public class MenuManager : MonoBehaviour
 
     public GameObject tapToPlaceAR;
 
-   
+
     GameObject currentPopup;
     #region Singleton
     private static MenuManager _instance;
@@ -59,7 +59,7 @@ public class MenuManager : MonoBehaviour
         {
             ResumeGame();
         }
-        else if (Input.GetKeyDown(KeyCode.Escape) && !GameManager.Instance.gameIsPaused)
+        else if (Input.GetKeyDown(KeyCode.Escape) && !GameManager.Instance.gameIsPaused && !GameManager.Instance.gameEnded)
         {
             PauseGame();
         }
@@ -122,5 +122,10 @@ public class MenuManager : MonoBehaviour
         storeImg.SetActive(true);
         btnClkAS.Play();
         currentPopup = storeImg;
+    }
+
+    public void HideGameMenu()
+    {
+        menuUI.SetActive(false);
     }
 }

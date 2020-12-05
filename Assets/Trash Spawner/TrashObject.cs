@@ -37,7 +37,7 @@ public class TrashObject : MonoBehaviour
         {
             transform.position = Vector3.Lerp(gameObject.transform.position, Camera.main.transform.position, timeElapsed / 0.2f);
             timeElapsed += Time.deltaTime;
-            if (timeElapsed > 0.1f)
+            if (timeElapsed > 0.15f)
             {
                 Destroy(gameObject);
             }

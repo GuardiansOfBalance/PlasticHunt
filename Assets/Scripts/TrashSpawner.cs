@@ -36,14 +36,12 @@ public class TrashSpawner : MonoBehaviour
         currentDragValue = 8;
         canSpawn = true;
         mainCam = Camera.main.gameObject;
-        // Vector3 random = new Vector3(Random.Range(mainCam.transform.position.x, 3), , Random.Range(mainCam.transform.position.z, 3));
         StartCoroutine(TrashSpawnerCoroutine(timeBetweenEachSpawn));
     }
 
-    // Update is called once per frame
     void Update()
     {
-       // Debug.Log(currentDragValue);
+
     }
 
     IEnumerator TrashSpawnerCoroutine(float timeBetweenEachSpawn)

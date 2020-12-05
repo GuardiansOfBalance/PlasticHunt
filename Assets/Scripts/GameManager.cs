@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class GameManager : MonoBehaviour
     public bool gameIsPaused;
     public bool gameStarted;
     public float gameTotalTime;
-
+    public bool gameEnded;
     void Awake()
     {
         #region Singleton
@@ -37,8 +38,14 @@ public class GameManager : MonoBehaviour
 
     public void EndGame()
     {
-        TrashSpawner.Instance.canSpawn = false;
+        MenuManager.Instance.HideGameMenu();
+        gameEnded = true;
         Time.timeScale = 0;
-        Debug.Log("Game Ended " + ScoreManager.Instance.numberOfCollectedTrashGrams + ScoreManager.Instance.numberOfCollectedTrashItems);
+        ScorePanel.Instance.ShowScorePanel();
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene("PlasticHunt");
     }
 }
