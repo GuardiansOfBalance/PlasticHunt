@@ -4,10 +4,30 @@ using UnityEngine;
 
 public class GameWorld : MonoBehaviour
 {
-    // Start is called before the first frame update
+    #region Singleton
+    private static GameWorld _instance;
+    public static GameWorld Instance { get { return _instance; } }
+    #endregion
+    public GameObject gameUI;
+
+    void Awake()
+    {
+        #region Singleton
+        if (_instance != null && _instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            _instance = this;
+        }
+        #endregion
+    }
+
     void Start()
     {
         MenuManager.Instance.tapToPlaceAR.SetActive(false);
+        transform.SetAsLastSibling();
     }
     void OnEnable()
     {
@@ -17,5 +37,17 @@ public class GameWorld : MonoBehaviour
     void Update()
     {
 
+    }
+
+    public void ShowGameUI()
+    {
+        MenuManager.Instance.tapToPlaceAR.SetActive(false);
+        gameUI.SetActive(true);
+    }
+
+    public void HideGameUI()
+    {
+        MenuManager.Instance.tapToPlaceAR.SetActive(false);
+        gameUI.SetActive(false);
     }
 }

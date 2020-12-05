@@ -66,7 +66,6 @@ public class MenuManager : MonoBehaviour
 
         else if (Input.GetKeyDown(KeyCode.Escape) && GameManager.Instance.gameIsPaused && currentPopup != null)
         {
-            Time.timeScale = 1;
             currentPopup.gameObject.SetActive(false);
             currentPopup = null;
         }
@@ -115,6 +114,7 @@ public class MenuManager : MonoBehaviour
 
     void AlternativeSolutionsBtnClk()
     {
+        Time.timeScale = 0;
         alternativesImg.SetActive(true);
         currentPopup = alternativesImg;
         btnClkAS.Play();
