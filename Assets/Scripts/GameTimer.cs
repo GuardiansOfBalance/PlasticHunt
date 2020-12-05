@@ -41,11 +41,11 @@ public class GameTimer : MonoBehaviour
             currentTime -= Time.deltaTime;
             if (currentTime <= GameManager.Instance.gameTotalTime / 2 && currentTime > GameManager.Instance.gameTotalTime / 4)
             {
-                TrashSpawner.Instance.currentDragValue = 4;
+                TrashSpawner.Instance.currentDragValue = 6;
             }
             else if (currentTime <= GameManager.Instance.gameTotalTime / 2 && currentTime <= GameManager.Instance.gameTotalTime / 4)
             {
-                TrashSpawner.Instance.currentDragValue = 2;
+                TrashSpawner.Instance.currentDragValue = 4;
             }
             gameTimerFillImg.fillAmount -= 1.0f / GameManager.Instance.gameTotalTime * Time.deltaTime;
             int seconds = (int)currentTime % (int)GameManager.Instance.gameTotalTime;
