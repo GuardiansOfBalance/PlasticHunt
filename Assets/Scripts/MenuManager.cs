@@ -66,6 +66,7 @@ public class MenuManager : MonoBehaviour
 
         else if (Input.GetKeyDown(KeyCode.Escape) && GameManager.Instance.gameIsPaused && currentPopup != null)
         {
+            Time.timeScale = 1;
             currentPopup.gameObject.SetActive(false);
             currentPopup = null;
         }
@@ -98,6 +99,7 @@ public class MenuManager : MonoBehaviour
 
     void DonateBtnClk()
     {
+        Time.timeScale = 0;
         comingSoonImg.SetActive(true);
         currentPopup = comingSoonImg;
         btnClkAS.Play();
@@ -105,6 +107,7 @@ public class MenuManager : MonoBehaviour
 
     void ReportIncidentBtnClk()
     {
+        Time.timeScale = 0;
         comingSoonImg.SetActive(true);
         currentPopup = comingSoonImg;
         btnClkAS.Play();
@@ -119,11 +122,17 @@ public class MenuManager : MonoBehaviour
 
     void storeBtnClk()
     {
+        Time.timeScale = 0;
         storeImg.SetActive(true);
         btnClkAS.Play();
         currentPopup = storeImg;
     }
 
+    public void PlayBtnClkAudio()
+    {
+        btnClkAS.Play();
+
+    }
     public void HideGameMenu()
     {
         menuUI.SetActive(false);

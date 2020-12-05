@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
+        MenuManager.Instance.PlayBtnClkAudio();
         SceneManager.LoadScene("PlasticHunt");
     }
 }

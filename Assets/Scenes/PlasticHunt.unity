@@ -927,14 +927,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
-    - target: {fileID: 4102499576291453559, guid: f744273d84852604e8fb58d4b911d4d9, type: 3}
-      propertyPath: gameStarted
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4102499576291453559, guid: f744273d84852604e8fb58d4b911d4d9, type: 3}
-      propertyPath: gameTotalTime
-      value: 120
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f744273d84852604e8fb58d4b911d4d9, type: 3}
 --- !u!1001 &5808441359139288407
@@ -1031,10 +1023,6 @@ PrefabInstance:
     - target: {fileID: 1107343103887874171, guid: 60142c04bcb0f574faa6d72114f1d3aa, type: 3}
       propertyPath: m_Name
       value: Menu
-      objectReference: {fileID: 0}
-    - target: {fileID: 1107343103887874171, guid: 60142c04bcb0f574faa6d72114f1d3aa, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60142c04bcb0f574faa6d72114f1d3aa, type: 3}
